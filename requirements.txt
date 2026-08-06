@@ -1,0 +1,27 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+pydantic-settings==2.5.2
+python-multipart==0.0.9
+python-dotenv==1.0.1
+
+# Embeddings + vector search
+sentence-transformers==3.1.1
+faiss-cpu>=1.9.0
+numpy>=1.26
+
+# PDF parsing (Bangla-safe Unicode extraction)
+pypdf==4.3.1
+
+# LLM clients
+groq==0.11.0
+httpx==0.27.2
+
+# Optional: uncomment for local open-source LLM inference (needs GPU)
+# transformers==4.44.2
+# accelerate==0.34.2
+# bitsandbytes==0.43.3
+# torch==2.4.1
+
+# Testing
+pytest==8.3.3

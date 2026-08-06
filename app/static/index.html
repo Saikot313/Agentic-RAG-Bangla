@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grounded Intelligence · Agentic RAG for Bangla &amp; English Documents</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400&family=Hind+Siliguri:wght@400;500;600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="hero">
+      <div class="eyebrow">Agentic RAG · Retrieve → Generate → Verify</div>
+      <h1>Grounded Intelligence</h1>
+      <p class="hero-en">Multi-agent RAG for Bangla &amp; English documents.</p>
+      <p class="hero-desc">Upload a PDF and ask in Bangla or English. A retrieval agent surfaces the relevant passages,
+        and a verifier agent checks every answer against the source before you see it.</p>
+    </div>
+
+    <div class="card">
+      <p class="card-title"><span class="num">01</span> Upload Source Document</p>
+      <label class="dropzone" id="dropzone">
+        <input type="file" id="fileInput" accept="application/pdf">
+        <div class="dz-icon">⌗</div>
+        <div class="dz-label">Drop a PDF here, or click to browse</div>
+        <div class="dz-sub">.pdf only</div>
+      </label>
+      <div id="fileChipHolder"></div>
+      <div class="row">
+        <button class="primary" id="uploadBtn" disabled>Index Document</button>
+        <div class="status" id="uploadStatus"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="card-title"><span class="num">02</span> Ask a Question</p>
+      <textarea id="question" placeholder="e.g. What are the key decisions outlined in this document?"></textarea>
+      <div class="row">
+        <label class="toggle">
+          <input type="checkbox" id="bilingual">
+          <span class="switch"></span>
+          <span>Bilingual answer (Bangla + English)</span>
+        </label>
+        <div class="topk">
+          <span>top_k</span>
+          <input type="number" id="topK" value="5" min="1" max="20">
+        </div>
+        <div class="composer-actions">
+          <button class="primary" id="askBtn">Ask</button>
+        </div>
+      </div>
+      <div class="status" id="queryStatus"></div>
+    </div>
+
+    <div class="card results" id="results">
+      <p class="card-title"><span class="num">03</span> Answer</p>
+      <div class="answer-row">
+        <div class="answer-text">
+          <div class="bn-answer" id="answerText"></div>
+          <div class="meta-line">
+            <span>lang: <b id="detLang">–</b></span>
+            <span>rewritten: <b id="rewritten">–</b></span>
+          </div>
+          <div id="retryFlagHolder"></div>
+          <div id="claimsHolder"></div>
+        </div>
+        <div class="seal" id="seal">
+          <div class="label" id="sealLabel">—</div>
+          <div class="pct" id="sealPct">–</div>
+        </div>
+      </div>
+
+      <div class="evidence">
+        <h3>Retrieved Passages</h3>
+        <div id="chunkList"></div>
+      </div>
+    </div>
+
+    <footer>Agentic RAG for Bangla Document Intelligence - retrieval, generation &amp; verification agents working in
+      sequence.</footer>
+    <footer>Made by Md.Sakender Saikot</footer>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+
+</html>
