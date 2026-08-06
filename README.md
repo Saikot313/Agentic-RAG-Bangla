@@ -12,4 +12,4 @@ GitHub Pages: https://saikot313.github.io/Agentic-RAG-Bangla/
 - CSS3
 - JavaScript
 
-> The complete source code, backend, and project files are available in the `main` branch.
+> The complete source code, backend, and project files are available in the `main` branch .
