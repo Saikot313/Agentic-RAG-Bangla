@@ -92,6 +92,8 @@ plug into that ecosystem later.
 
  ![Project GIF](screenshots/hello.gif) 
 
+ [![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge)](https://agentic-rag-bangla.netlify.app)
+
 ---
 
 ## Architecture
